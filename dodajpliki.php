@@ -3,7 +3,16 @@
  <body>
 <?php
 
+@$rej = trim($_REQUEST["rej"]);
+     
+			if ($rej == "rej"){
 
+				if(isset($_COOKIE["cookie"])){
+					
+					
+				}
+			}
+?>
 
  <form action="odbierz.php" method="POST"
  ENCTYPE="multipart/form-data">
