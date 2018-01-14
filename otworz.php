@@ -10,7 +10,10 @@ while($file_name = readdir($dir))  {
 		 
 		 	
 		 //$plik = $file_name;
-		
+		if (strstr($file_name, ".")!==False){
+			echo $file_name;
+	   echo "   <a href='cookies.php?p=".$file_name."'>  Pobierz</a><br>";
+		}
 		else{
 			echo $file_name;
 			
