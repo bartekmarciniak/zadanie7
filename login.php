@@ -30,7 +30,7 @@ $czas = date("Y-m-d H:i:s");
      
 			if ($rej == "rej"){
 
-$wynik  = mysqli_query ($polaczenie,"SELECT * FROM  user WHERE (logi = '$wys_login')")or die('Błąd zapytania do tabeli!'); // wszystko z user sprawdzeie loginu 
+$wynik  = mysqli_query ($polaczenie,"SELECT * FROM  user WHERE (logi = $wys_login)")or die('Błąd zapytania do tabeli!'); // wszystko z user sprawdzeie loginu 
        
    	
 		while ($wiersz = mysqli_fetch_array ($wynik))
