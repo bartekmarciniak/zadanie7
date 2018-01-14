@@ -18,10 +18,26 @@ if(isset($_COOKIE["cookie"])){
 	
  
  $directory = $user.'/'.$_GET['fol'];
-$dir = opendir($directory);
-echo "<br><br>Lista plików:<br>";
- 
 
+echo "<br><br>Lista plików:<br><br>";
+ 
+ 
+while($file_name = readdir($dir))  {
+	 if (($file_name != ".") && ($file_name != "..")) {
+		 
+		 	
+		 //$plik = $file_name;
+		if (strstr($file_name, ".")!==False){
+			echo $file_name;
+	   echo "   <a href='cookies.php?p=".$file_name."'>Pobierz</a><br>";
+		}
+		else{
+			echo $file_name;
+			
+			echo "<a href='index.php?fol=".$file_name."'>Przeglądaj</a><br>";}
+	 }
+	 
+}
 
 closedir($dir);
 	echo"<br><br><form action='odbierz.php' method='POST'
@@ -55,7 +71,7 @@ $proby=$wiersz1 [2];}
 
 	if(isset($data)&&($proby=='1'))
 	{
-	echo "<p><font size='5' color='red'> Ktoś próbował sie zalogować nie poprawnymi danymi dnia:  ".$data."  </font></p></br>";	
+	echo "<p><font size='4' color='green'> Ktoś próbował sie zalogować złymi danymi dnia:  ".$data."  </font></p></br>";	
 	}
 	
 	}
