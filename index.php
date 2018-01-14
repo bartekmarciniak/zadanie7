@@ -10,7 +10,7 @@
 include ("polaczenia.php");
 
 $d = ($_POST['d']);
-if(isset($_COOKIE["cookie"]))
+if(isset($_COOKIE["cookie"])){
 	$user=$_COOKIE["cookie"];
 	if(isset($_GET['fol'])){
 		
@@ -71,7 +71,7 @@ $proby=$wiersz1 [2];}
 
 	if(isset($data)&&($proby=='1'))
 	{
-	echo "<p><font size='4' color='green'> Próbowano zalogować złymi danymi dnia:  ".$data."  </font></p></br>";	
+	echo "<p><font size='4' color='green'> Ktoś próbował sie zalogować złymi danymi dnia:  ".$data."  </font></p></br>";	
 	}
 	
 	}
