@@ -6,7 +6,7 @@ if(isset($_COOKIE["cookie"])){
      
 			if ($rej == "rej"){
 				
-				if(mkdir('/home/barmarcp/domains/barmarc.pl/public_html/zad7/'.$user.'/'.$folder, 0777))
+				
 					{
 					echo 'Udało się stworzyć katalog';
 					}
