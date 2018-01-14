@@ -11,12 +11,14 @@ if(isset($_COOKIE["cookie"])){
 						
 						echo 'Odebrano plik: '.$_FILES['plik']['name'].'<br/>';
 						if(isset($_POST['fol'])){
-						
+						move_uploaded_file($_FILES['plik']['tmp_name'],
+						'/home/barmarcp/domains/barmarc.pl/public_html/zad7/'.$login.'/'.$_POST['fol'].'/'.$_FILES['plik']['name']);
 						header("Location: index.php?fol=".$_POST['fol']."");
 						}
 						else{
 							
-							
+							move_uploaded_file($_FILES['plik']['tmp_name'],
+						'/home/barmarcp/domains/barmarc.pl/public_html/zad7/'.$login.'/'.$_FILES['plik']['name']);
 						header("Location: index.php");
 							
 						}
