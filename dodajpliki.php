@@ -1,4 +1,3 @@
-
 <html>
  <body>
 <?php
@@ -8,7 +7,7 @@
 			if ($rej == "rej"){
 
 				if(isset($_COOKIE["cookie"])){
-					
+					echo "Witaj: ".$_COOKIE["cookie"];
 					
 				}
 			}
