@@ -30,7 +30,7 @@ $czas = date("Y-m-d H:i:s");
      
 			if ($rej == "rej"){
 
-$wynik  = mysqli_query ($polaczenie,"SELECT * FROM  user WHERE (login = '$wys_login')")or die('Błąd zapytania do tabeli!'); // wszystko z user sprawdzeie loginu 
+$wynik  = mysqli_query ($polaczenie,"SELECT * FROM  user WHERE (logi = '$wys_login')")or die('Błąd zapytania do tabeli!'); // wszystko z user sprawdzeie loginu 
        
    	
 		while ($wiersz = mysqli_fetch_array ($wynik))
@@ -70,7 +70,24 @@ if($li[2]=='1'&&$ilosc==2){$ilosc=3;}
 		header("Location: logi.php");}
 			
 	
-	
+	else
+	{
+		if($ilosc<2){
+			$zapytanie1= mysqli_query ($polaczenie, "INSERT INTO logi2 (idu,data,proby) VALUES ('". $id."','".$czas."','1')"); // wpisuje 1
+			$ilosc++;
+			//echo "</br>1a</br>";
+		
+			
+					echo "Niepoprawne logowanie ilosc: ".$ilosc;
+		}else{
+			
+			if($ilosc=='2'){$zapytanie1= mysqli_query ($polaczenie, "INSERT INTO logi2 (idu,data,proby) VALUES ('". $id."','".$czas."','1')");} // wpisuje 1
+			
+	     //$wynik8  = mysqli_query ($polaczenie,"UPDATE  logi2 SET proby= '2' WHERE proby='0' AND idu='$id'")or die('Błąd zapytania do tabeli klienci21!');
+				echo "konto zostalo zablokowane";
+				
+		}
+	}	
 	
 }
 else {
