@@ -12,7 +12,29 @@ include ("polaczenia.php");
 $d = ($_POST['d']);
 if(isset($_COOKIE["cookie"])){
 	$user=$_COOKIE["cookie"];
+	if(isset($_GET['fol'])){
+		
+		echo "Witaj: ".$_COOKIE["cookie"];
 	
+ 
+ $directory = $user.'/'.$_GET['fol'];
+$dir = opendir($directory);
+echo "<br><br>Lista plików:<br>";
+ 
+
+
+closedir($dir);
+	echo"<br><br><form action='odbierz.php' method='POST'
+ ENCTYPE='multipart/form-data'>
+ <input type='hidden' name='rej2' value='rej2'>
+ <input type='hidden' name='fol' value='".$_GET['fol']."'>
+ <input type='file' name='plik'/>
+ <input type='submit' value='Wyślij plik'/>
+ </form>";
+echo "<br><a href='index.php'>Powrót</a><br>";
+ echo "<br><a href='wyloguj.php?d=".$d."'>Wyloguj się</a><br>";
+		
+	}
 	
 	else{
 	//echo $user;
@@ -39,8 +61,8 @@ $proby=$wiersz1 [2];}
 	}
 }
 else{
-echo "<br><a href='rejestr.php'>Nowy użytkownik</a><br><br>";
-echo "<a href='login.php'>Zaloguj się</a><br>";
+echo "<br><a href='rejestr.php'><center>Nowy użytkownik</center></a><br><br>";
+echo "<a href='login.php'><center>Zaloguj się</center></a><br>";
 }
 
 ?>
